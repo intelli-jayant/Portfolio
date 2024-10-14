@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "three": "^0.169.0",
+    "three-gltf-loader": "^1.111.0",
+    "three-stdlib": "^2.33.0"
+  },
+  "devDependencies": {
+    "vite": "^5.4.8"
+  }
+}
