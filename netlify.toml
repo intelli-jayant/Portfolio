@@ -1,0 +1,7 @@
+[build]
+  publish = "public"  # Directory to deploy
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
