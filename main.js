@@ -12,14 +12,14 @@ let snacks = [
 ];
 let currentSnackIndex = 0;
 let snack, gridSize = 20, cubeSize = 1, moveInterval = 300, radius =0.7;
-let eatSound = new Audio('/public/snake-eat.mp3');
+let eatSound = new Audio('https://your-site-name.netlify.app/snake-eat.mp3');
 let touchStartX = 0;
 let touchStartY = 0;
 let clock, gameOver = false;
 
 //snake texture
 let textureLoader = new THREE.TextureLoader();
-let snakeTexture = textureLoader.load('/public/snake.jpg');
+let snakeTexture = textureLoader.load('https://your-site-name.netlify.app/snake.jpg');
 snakeTexture.wrapS = THREE.RepeatWrapping;
 snakeTexture.wrapT = THREE.RepeatWrapping;
 snakeTexture.repeat.set(3, 3); // Adjust these values as needed
@@ -52,7 +52,7 @@ function init() {
     scene.add(directionalLight);
     //load grass
     let textureLoader = new THREE.TextureLoader();
-    let grassTexture = textureLoader.load('/public/grass.jpg');
+    let grassTexture = textureLoader.load('https://your-site-name.netlify.app/grass.jpg');
     grassTexture.wrapS = grassTexture.wrapT = THREE.RepeatWrapping;
     grassTexture.repeat.set(10, 10);
     // Create a floor
