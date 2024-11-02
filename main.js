@@ -12,14 +12,14 @@ let snacks = [
 ];
 let currentSnackIndex = 0;
 let snack, gridSize = 20, cubeSize = 1, moveInterval = 300, radius =0.7;
-let eatSound = new Audio('/snake-eat.mp3');
+let eatSound = new Audio('/public/snake-eat.mp3');
 let touchStartX = 0;
 let touchStartY = 0;
 let clock, gameOver = false;
 
 //snake texture
 let textureLoader = new THREE.TextureLoader();
-let snakeTexture = textureLoader.load('/snake.jpg');
+let snakeTexture = textureLoader.load('/public/snake.jpg');
 snakeTexture.wrapS = THREE.RepeatWrapping;
 snakeTexture.wrapT = THREE.RepeatWrapping;
 snakeTexture.repeat.set(3, 3); // Adjust these values as needed
@@ -52,7 +52,7 @@ function init() {
     scene.add(directionalLight);
     //load grass
     let textureLoader = new THREE.TextureLoader();
-    let grassTexture = textureLoader.load('/grass.jpg');
+    let grassTexture = textureLoader.load('/public/grass.jpg');
     grassTexture.wrapS = grassTexture.wrapT = THREE.RepeatWrapping;
     grassTexture.repeat.set(10, 10);
     // Create a floor
@@ -241,10 +241,7 @@ function endGame() {
 }
 
 function restartGame() {
-    // for (let i = scene.children.length - 1; i >= 0; i--) {
-    //     let obj = scene.children[i];
-    //     scene.remove(obj);
-    // }
+ 
     for (let i = 0; i < snake.length; i++) {
         scene.remove(snake[i]);
     }
