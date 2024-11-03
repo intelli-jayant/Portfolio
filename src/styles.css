@@ -1,53 +1,70 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
   overflow: hidden;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000; /* Adjust the background color to your preference */
 }
+
 canvas {
   display: block;
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
 }
+
 #gameOver {
-  height: 20vh;
-  width: 20vw;
+  width: 90%; /* Use a percentage to adapt to screen size */
+  max-width: 400px; /* Set a max width for larger screens */
+  padding: 20px;
   display: none;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(45, 37, 37, 0.8);
+  background-color: rgba(45, 37, 37, 0.9);
   color: white;
-  padding: 20px;
   text-align: center;
-  font-size: 24px;
-  stroke-width: 4px;
-  stroke: aliceblue;
+  font-size: 1.5rem; /* Use rem for scalable text */
   border-radius: 10px;
   z-index: 2;
 }
+
 #gameOver button {
   padding: 10px 20px;
-  font-size: 18px;
+  font-size: 1rem;
   border-radius: 5px;
   background-color: greenyellow;
+  border: none;
+  cursor: pointer;
 }
+
 #infoBox {
-  height: 4vh;
-  width: 85vw;
+  width: 90%; /* Adapt to the screen size */
+  max-width: 400px;
   position: absolute;
-  top: 20px;
+  top: 10px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgba(3, 28, 105, 0.7);
+  background-color: rgba(3, 28, 105, 0.8);
   color: rgb(221, 255, 0);
-  padding: 10px 20px;
-  font-size: 20px;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  padding: 10px;
+  font-size: 1.2rem; /* Use rem for scalable text */
   text-align: center;
   border-radius: 5px;
 }
+
 #snackLabel {
   position: absolute;
-  font-size: 18px;
+  font-size: 1rem; /* Use rem for scalable text */
   color: rgb(0, 255, 234);
   text-shadow: 1px 1px 2px black;
 }

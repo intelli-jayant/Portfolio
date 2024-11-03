@@ -11,7 +11,7 @@ let snacks = [
     { text: "Contact", message: "jayant.2023@iic.ac.in" }
 ];
 let currentSnackIndex = 0;
-let snack, gridSize = 20, cubeSize = 1, moveInterval = 300, radius =0.7;
+let snack, gridSize = 18, cubeSize = 1, moveInterval = 300, radius =0.7;
 let eatSound = new Audio('/public/assets/sounds/snake-eat.mp3');
 let touchStartX = 0;
 let touchStartY = 0;
@@ -87,6 +87,7 @@ function init() {
     document.getElementById('restartButton').addEventListener('click', restartGame);
 
     // Start game loop
+    window.addEventListener('resize', onWindowResize);
     clock = new THREE.Clock();
     animate();
 }
@@ -305,5 +306,17 @@ function addTouchControls() {
         }
     });
 }
+// Adjust renderer size and camera aspect ratio on window resize
+function onWindowResize() {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  }
+  
+  
+
+  
+
+  
 
 init();
