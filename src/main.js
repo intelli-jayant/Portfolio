@@ -78,41 +78,75 @@ function init() {
   grassTexture.repeat.set(10, 10);
 
   //background image
-//   if (window.innerWidth>1300){
+  if (window.innerWidth>1300){
+    textureLoader.load("assets/textures/bgi.jpg", function(texture) {
+        const imageAspect = texture.image.width / texture.image.height;
+      const viewAspect = window.innerWidth / window.innerHeight;
     
-//   }
-  textureLoader.load("assets/textures/bgi.jpg", function(texture) {
-    const imageAspect = texture.image.width / texture.image.height;
-  const viewAspect = window.innerWidth / window.innerHeight;
-
-  // Set the size of the plane based on the aspect ratio
-  let planeWidth, planeHeight;
-  if (viewAspect > imageAspect) {
-    // Wider view, match height and adjust width
-    planeHeight = 10;
-    planeWidth = planeHeight * viewAspect;
-  } else {
-    // Taller view, match width and adjust height
-    planeWidth = 10;
-    planeHeight = planeWidth / viewAspect;
+      // Set the size of the plane based on the aspect ratio
+      let planeWidth, planeHeight;
+      if (viewAspect > imageAspect) {
+        // Wider view, match height and adjust width
+        planeHeight = 10;
+        planeWidth = planeHeight * viewAspect;
+      } else {
+        // Taller view, match width and adjust height
+        planeWidth = 10;
+        planeHeight = planeWidth / viewAspect;
+      }
+    
+      // Create a plane geometry with the calculated size
+      const geometry = new THREE.PlaneGeometry(planeWidth, planeHeight);
+      const material = new THREE.MeshBasicMaterial({ map: texture });
+    
+      // Create a mesh
+      const plane = new THREE.Mesh(geometry, material);
+      
+      // Position the plane as the background
+      plane.position.z = -15; // Move it behind other objects in the scene
+      
+      // Add the plane to the scene
+      scene.add(plane);
+      plane.scale.set(6,8,6);
+      plane.rotation.x = -Math.PI / 6.6;
+      plane.position.y = 10.7;
+      });
   }
-
-  // Create a plane geometry with the calculated size
-  const geometry = new THREE.PlaneGeometry(planeWidth, planeHeight);
-  const material = new THREE.MeshBasicMaterial({ map: texture });
-
-  // Create a mesh
-  const plane = new THREE.Mesh(geometry, material);
+  else{
+    textureLoader.load("assets/textures/bgi.jpg", function(texture) {
+        const imageAspect = texture.image.width / texture.image.height;
+      const viewAspect = window.innerWidth / window.innerHeight;
+    
+      // Set the size of the plane based on the aspect ratio
+      let planeWidth, planeHeight;
+      if (viewAspect > imageAspect) {
+        // Wider view, match height and adjust width
+        planeHeight = 10;
+        planeWidth = planeHeight * viewAspect;
+      } else {
+        // Taller view, match width and adjust height
+        planeWidth = 10;
+        planeHeight = planeWidth / viewAspect;
+      }
+    
+      // Create a plane geometry with the calculated size
+      const geometry = new THREE.PlaneGeometry(planeWidth, planeHeight);
+      const material = new THREE.MeshBasicMaterial({ map: texture });
+    
+      // Create a mesh
+      const plane = new THREE.Mesh(geometry, material);
+      
+      // Position the plane as the background
+      plane.position.z = -15; // Move it behind other objects in the scene
+      
+      // Add the plane to the scene
+      scene.add(plane);
+      plane.scale.set(8,8,8);
+      plane.rotation.x = -Math.PI / 6.6;
+      plane.position.y = 23;
+      });
+  }
   
-  // Position the plane as the background
-  plane.position.z = -15; // Move it behind other objects in the scene
-  
-  // Add the plane to the scene
-  scene.add(plane);
-  plane.scale.set(6,8,6);
-  plane.rotation.x = -Math.PI / 6.6;
-  plane.position.y = 10.7;
-  });
 
   // Create a floor
   let floorGeometry = new THREE.PlaneGeometry(gridSize * 1.05, gridSize * 1.05);
