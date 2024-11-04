@@ -29,6 +29,7 @@ let snack,
 let eatSound = new Audio("assets/sounds/snake-eat.mp3");
 let touchStartX = 0;
 let touchStartY = 0;
+
 let clock,
   gameOver = false;
 
@@ -109,13 +110,9 @@ function init() {
     .addEventListener("click", restartGame);
 
   // Start game loop
+  
   window.addEventListener("resize", onWindowResize);
-  window.addEventListener("resize", () => {
-    const windowWidth = window.innerWidth;
-    if (windowWidth < 1300) {
-      gridSize = 10;
-    }
-  });
+ 
   clock = new THREE.Clock();
   animate();
 }
@@ -350,3 +347,11 @@ function onWindowResize() {
 }
 
 init();
+window.addEventListener("resize", () => {
+    const windowWidth = window.innerWidth;
+    if (windowWidth < 1300) {
+      gridSize = 10;
+      init();
+      console.log("gridSize", gridSize);
+    }
+  });
