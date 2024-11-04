@@ -110,9 +110,9 @@ function init() {
     .addEventListener("click", restartGame);
 
   // Start game loop
-  
+
   window.addEventListener("resize", onWindowResize);
- 
+
   clock = new THREE.Clock();
   animate();
 }
@@ -346,12 +346,11 @@ function onWindowResize() {
   renderer.setSize(window.innerWidth, window.innerHeight);
 }
 
-init();
-window.addEventListener("resize", () => {
-    const windowWidth = window.innerWidth;
-    if (windowWidth < 1300) {
-      gridSize = 10;
-      init();
-      console.log("gridSize", gridSize);
-    }
-  });
+const windowWidth = window.innerWidth;
+if (windowWidth < 1300) {
+  gridSize = 10;
+  init();
+  console.log("gridSize", gridSize);
+} else {
+  init();
+}
