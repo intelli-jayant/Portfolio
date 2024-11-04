@@ -143,7 +143,7 @@ function init() {
       scene.add(plane);
       plane.scale.set(8,8,8);
       plane.rotation.x = -Math.PI / 6.6;
-      plane.position.y = 23;
+      plane.position.y = 18;
       });
   }
   
