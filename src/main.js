@@ -10,15 +10,15 @@ let snacks = [
   {
     text: "About me",
     message:
-      "I am a final year MSc Informatics student with experience in building web apps and working with libraries like D3.js and Three.js",
+      "Aspiring Software Developer with a strong foundation in data structures and web development. Experienced in building projects using React and Python, with a keen interest in learning new technologies. Looking for an opportunity to apply my skills and grow in a professional environment.",
   },
-  { text: "Skills and Languages", message: "HTML, CSS, JavaScript, and C++" },
+  { text: "Skills and Languages", message: "Python, JavaScript, Typescript ,React js , Machine Learning" },
   {
     text: "Projects",
     message:
-      "Data visualization with D3.js and Gamified portfolio with Three.js",
+      "Coaching Management System and Content Based Movie Recommendation System",
   },
-  { text: "Contact", message: "jayant.2023@iic.ac.in" },
+  { text: "Contact", message: "kumarjayant242@gmail.com" },
 ];
 let currentSnackIndex = 0;
 let snack,
